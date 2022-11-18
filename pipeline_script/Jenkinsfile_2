@@ -17,6 +17,7 @@ pipeline {
         stage('Unit-Test') {
             steps {
                 echo 'Running JUnit tests'
+                sh 'python3 test.py'
             }
         }
 
