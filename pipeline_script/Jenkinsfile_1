@@ -29,7 +29,7 @@ pipeline {
         always {
             echo "This will always run"
         }
-        succuess {
+        success {
             echo "This will run only if successfull"
         }
         failure {
