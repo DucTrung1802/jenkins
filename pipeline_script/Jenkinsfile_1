@@ -1,46 +1,48 @@
 pipeline {
     agent any
-    stages("Complile") {
-        steps {
-            echo "Complile successully!!";
-        }
-
-        stage("JUnit") {
+    stages {
+        stage('Complile') {
             steps {
-                echo "JUnit passed successully!!";
+                echo 'Complile successully!'
             }
         }
 
-        stage("Quality-Gate") {
+        stage('JUnit') {
             steps {
-                echo "Quality-Gate passed successully!!";
+                echo 'JUnit passed successully!!'
+            }
+        }
+
+        stage('Quality-Gate') {
+            steps {
+                echo 'Quality-Gate passed successully!!'
                 /*sh exit ("1");*/
             }
         }
 
-        stage("Deploy") {
+        stage('Deploy') {
             steps {
-                echo "Pass!";
+                echo 'Pass!'
             }
         }
     }
 
     post {
         always {
-            echo "This will always run"
+            echo 'This will always run'
         }
         success {
-            echo "This will run only if successfull"
+            echo 'This will run only if successfull'
         }
         failure {
-            echo "This will run only if failed"
+            echo 'This will run only if failed'
         }
         unstable {
-            echo "This will run only if the run was marked as unstable"
+            echo 'This will run only if the run was marked as unstable'
         }
         changed {
-            echo "This will run only if the state of the Pipeline has changed"
-            echo "For example, if the Pipeline was previously failing but is now succsessful"
+            echo 'This will run only if the state of the Pipeline has changed'
+            echo 'For example, if the Pipeline was previously failing but is now succsessful'
         }
     }
 }
