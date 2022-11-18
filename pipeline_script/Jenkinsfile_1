@@ -7,7 +7,7 @@ pipeline {
 
         stage("JUnit") {
             steps {
-                echo "JUnit passed successully!!"";
+                echo "JUnit passed successully!!";
             }
         }
 
@@ -20,7 +20,7 @@ pipeline {
 
         stage("Deploy") {
             steps {
-                echo "Pass"!;
+                echo "Pass!";
             }
         }
     }
