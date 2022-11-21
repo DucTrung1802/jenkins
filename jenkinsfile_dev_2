@@ -11,6 +11,7 @@ pipeline {
         stage('JUnit') {
             steps {
                 echo 'JUnit passed successully!!'
+                echo 'Mai Anh cute qua'
             }
         }
 
