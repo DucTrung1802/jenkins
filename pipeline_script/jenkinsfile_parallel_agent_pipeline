@@ -1,0 +1,35 @@
+/* groovylint-disable NestedBlockDepth */
+pipeline {
+    agent none
+    stages {
+        stage('Non-parallel stage') {
+            agent {
+                label 'master'
+            }
+            steps {
+                echo 'This stage will be executed first'
+            }
+        }
+
+        stage('Run test') {
+            parallel {
+                stage('Test on node') {
+                    agent {
+                        label 'node_1'
+                    }
+                    steps {
+                        echo 'Task 1 on node 1'
+                    }
+                }
+                stage('Test on master') {
+                    agent {
+                        label 'master'
+                    }
+                    steps {
+                        echo 'Task 1 on master'
+                    }
+                }
+            }
+        }
+    }
+}
