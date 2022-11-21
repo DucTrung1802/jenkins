@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Complile') {
             steps {
-                python3 test.py
+                // python3 test.py
                 echo 'Complile successully!'
             }
         }
